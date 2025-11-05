@@ -88,13 +88,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </Sidebar>
       <SidebarInset className="bg-background">
         <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:h-16 sm:px-6 md:hidden">
-          <SidebarTrigger asChild>
-             <Button size="icon" variant="outline" className="sm:hidden">
-                <>
-                  <PanelLeft className="h-5 w-5" />
-                  <span className="sr-only">Toggle Menu</span>
-                </>
-            </Button>
+          <SidebarTrigger variant="outline" size="icon" className="sm:hidden">
+            <PanelLeft className="h-5 w-5" />
+            <span className="sr-only">Toggle Menu</span>
           </SidebarTrigger>
         </header>
         <div className="h-[calc(100vh-3.5rem)] md:h-screen overflow-hidden">
