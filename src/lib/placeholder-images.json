@@ -1,3 +1,70 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "place1",
+      "description": "A beautiful mountain landscape at sunrise.",
+      "imageUrl": "https://images.unsplash.com/photo-1490682143684-14369e18dce8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb3VudGFpbiUyMHN1bnJpc2V8ZW58MHx8fHwxNzYyMzEzNzIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain sunrise"
+    },
+    {
+      "id": "place2",
+      "description": "A serene beach with turquoise water.",
+      "imageUrl": "https://images.unsplash.com/photo-1687357281786-d4d344e0049c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzZXJlbmUlMjBiZWFjaHxlbnwwfHx8fDE3NjIzMTMwNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "serene beach"
+    },
+    {
+      "id": "place3",
+      "description": "A bustling cityscape at night.",
+      "imageUrl": "https://images.unsplash.com/photo-1506606401543-2e73709cebb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaXR5JTIwbmlnaHR8ZW58MHx8fHwxNzYyMzEwNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city night"
+    },
+    {
+      "id": "place4",
+      "description": "A historic castle in the countryside.",
+      "imageUrl": "https://images.unsplash.com/photo-1645373097427-9d24af711e59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoaXN0b3JpYyUyMGNhc3RsZXxlbnwwfHx8fDE3NjIzNTMyNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "historic castle"
+    },
+    {
+      "id": "event1",
+      "description": "A vibrant music festival.",
+      "imageUrl": "https://images.unsplash.com/photo-1619229725920-ac8b63b0631a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtdXNpYyUyMGZlc3RpdmFsfGVufDB8fHx8MTc2MjI0NDg0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "music festival"
+    },
+    {
+      "id": "event2",
+      "description": "A traditional cultural parade.",
+      "imageUrl": "https://images.unsplash.com/photo-1711511133326-0be3104ee85a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjdWx0dXJhbCUyMHBhcmFkZXxlbnwwfHx8fDE3NjIzNTMyNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cultural parade"
+    },
+    {
+      "id": "event3",
+      "description": "An art exhibition in a modern gallery.",
+      "imageUrl": "https://images.unsplash.com/photo-1503293050619-6048ffad0dc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcnQlMjBleGhpYml0aW9ufGVufDB8fHx8MTc2MjI2MzM5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "art exhibition"
+    },
+    {
+      "id": "event4",
+      "description": "A local food festival with various stalls.",
+      "imageUrl": "https://images.unsplash.com/photo-1551883709-2516220df0bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmb29kJTIwZmVzdGl2YWx8ZW58MHx8fHwxNzYyMzIxMTE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food festival"
+    },
+    {
+      "id": "submission1",
+      "description": "A newly discovered waterfall in a forest.",
+      "imageUrl": "https://images.unsplash.com/photo-1531698451051-18c97580aeb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmb3Jlc3QlMjB3YXRlcmZhbGx8ZW58MHx8fHwxNzYyMzI5MDMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "forest waterfall"
+    },
+    {
+      "id": "submission2",
+      "description": "A hidden cove with pristine sand.",
+      "imageUrl": "https://images.unsplash.com/photo-1758782551880-14550b8ded5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxoaWRkZW4lMjBjb3ZlfGVufDB8fHx8MTc2MjM1MzI3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hidden cove"
+    },
+    {
+      "id": "submission3",
+      "description": "A viewpoint overlooking a canyon.",
+      "imageUrl": "https://images.unsplash.com/photo-1569746425740-1c3ecdbffe69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW55b24lMjB2aWV3cG9pbnR8ZW58MHx8fHwxNzYyMzUzMjc2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "canyon viewpoint"
+    }
+  ]
 }
