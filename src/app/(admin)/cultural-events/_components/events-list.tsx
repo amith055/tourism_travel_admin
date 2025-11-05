@@ -10,9 +10,9 @@ export function EventsList({ events }: { events: CulturalEvent[] }) {
 
   const filteredEvents = useMemo(() => {
     return events.filter(event =>
-      event.name.toLowerCase().includes(filters.name.toLowerCase()) &&
-      event.city.toLowerCase().includes(filters.city.toLowerCase()) &&
-      event.state.toLowerCase().includes(filters.state.toLowerCase())
+      (event.name || '').toLowerCase().includes(filters.name.toLowerCase()) &&
+      (event.city || '').toLowerCase().includes(filters.city.toLowerCase()) &&
+      (event.state || '').toLowerCase().includes(filters.state.toLowerCase())
     );
   }, [events, filters]);
 
