@@ -10,9 +10,9 @@ export function PlacesList({ places }: { places: TouristPlace[] }) {
 
   const filteredPlaces = useMemo(() => {
     return places.filter(place =>
-      place.name.toLowerCase().includes(filters.name.toLowerCase()) &&
-      place.city.toLowerCase().includes(filters.city.toLowerCase()) &&
-      place.state.toLowerCase().includes(filters.state.toLowerCase())
+      (place.name || '').toLowerCase().includes(filters.name.toLowerCase()) &&
+      (place.city || '').toLowerCase().includes(filters.city.toLowerCase()) &&
+      (place.state || '').toLowerCase().includes(filters.state.toLowerCase())
     );
   }, [places, filters]);
 
