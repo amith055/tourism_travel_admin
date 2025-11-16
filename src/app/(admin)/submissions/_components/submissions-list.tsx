@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { FilterControls, type Filters } from '@/components/admin/FilterControls';
 import { SubmissionCard } from '@/components/admin/SubmissionCard';
-import type { Submission } from '@/lib/types';
+import type { getSubmissions,  Submission } from '@/lib/submissions';
 
 export function SubmissionsList({ submissions }: { submissions: Submission[] }) {
   const [filters, setFilters] = useState<Filters>({ name: '', city: '', state: '' });

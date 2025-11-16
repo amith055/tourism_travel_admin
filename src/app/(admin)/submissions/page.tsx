@@ -1,4 +1,4 @@
-import { getSubmissions } from '@/lib/data';
+import { getSubmissions } from '@/lib/submissions';
 import { PageHeader } from '@/components/admin/PageHeader';
 import { Suspense } from 'react';
 import { SubmissionsList } from './_components/submissions-list';

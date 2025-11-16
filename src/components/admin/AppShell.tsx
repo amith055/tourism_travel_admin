@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import {
   CalendarDays,
   FileCheck2,
+  HomeIcon,
   LayoutDashboard,
   MapPin,
   Mountain,
@@ -44,6 +45,11 @@ const navItems = [
     icon: FileCheck2,
     label: 'Submissions',
   },
+  {
+    href: '/hotels',
+    icon: HomeIcon,
+    label: 'Hotels'
+  }
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -59,7 +65,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <Link href="/dashboard" className="flex items-center gap-2">
               <Mountain className="text-primary h-6 w-6" />
               <h1 className="text-lg font-semibold tracking-tight text-primary">
-                TourVista
+                LokVista
               </h1>
           </Link>
         </SidebarHeader>

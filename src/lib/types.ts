@@ -10,6 +10,9 @@ export interface BaseLocation {
   infrastructure?: string;
 }
 
+
+
+
 export interface TouristPlace extends BaseLocation {}
 
 export interface CulturalEvent extends BaseLocation {}

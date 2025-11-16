@@ -1,13 +1,12 @@
-
 import type { TouristPlace, CulturalEvent, Submission } from './types';
-import { PlaceHolderImages } from './placeholder-images';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, where, limit } from 'firebase/firestore';
 import { db } from './firebase';
+import { PlaceHolderImages } from './placeholder-images';
 
 const getImage = (id: string) => {
   const img = PlaceHolderImages.find(p => p.id === id);
   return img ? { url: img.imageUrl, hint: img.imageHint } : { url: 'https://picsum.photos/seed/default/600/400', hint: 'placeholder' };
-}
+};
 
 const mockSubmissions: Submission[] = [
   { id: '9', name: 'Hidden Waterfall', city: 'Asheville', state: 'NC', submittedBy: 'user1@example.com', imageUrl: getImage('submission1').url, imageHint: getImage('submission1').hint, coordinates: "35.5951,-82.5515", landmarks: "Blue Ridge Mountains", infrastructure: "Hiking Trail" },
@@ -15,8 +14,23 @@ const mockSubmissions: Submission[] = [
   { id: '11', name: 'Desert Arch', city: 'Moab', state: 'UT', submittedBy: 'user3@example.com', imageUrl: getImage('submission3').url, imageHint: getImage('submission3').hint, coordinates: "38.5733,-109.5498", landmarks: "Arches National Park", infrastructure: "Campgrounds" },
 ];
 
-// In a real application, these functions would fetch data from Firestore.
-// For now, they return mock data with a delay to simulate network latency.
+// Get one image from "images" collection based on placeid
+const getPlaceImage = async (placeId: string) => {
+  try {
+    const imagesRef = collection(db, 'images');
+    const q = query(imagesRef, where('placeId', '==', placeId), limit(1));
+    const snapshot = await getDocs(q);
+    if (!snapshot.empty) {
+      const data = snapshot.docs[0].data();
+      return { url: data.imageUrl || 'https://picsum.photos/seed/default/600/400', hint: 'fetched' };
+    } else {
+      return { url: 'https://picsum.photos/seed/default/600/400', hint: 'no-image' };
+    }
+  } catch (err) {
+    console.error('Error fetching image:', err);
+    return { url: 'https://picsum.photos/seed/default/600/400', hint: 'error' };
+  }
+};
 
 export const getDashboardStats = async () => {
   const touristPlaces = await getTouristPlaces();
@@ -35,42 +49,47 @@ export const getDashboardStats = async () => {
 export const getTouristPlaces = async (): Promise<TouristPlace[]> => {
   const querySnapshot = await getDocs(collection(db, 'touristplaces'));
   const places: TouristPlace[] = [];
-  querySnapshot.forEach((doc) => {
+
+  for (const doc of querySnapshot.docs) {
     const data = doc.data();
-    const placeHolder = getImage(data.imageHint) || { url: 'https://picsum.photos/seed/default/600/400', hint: 'placeholder' };
+    const image = await getPlaceImage(doc.id); 
     places.push({
       id: doc.id,
       name: data.name,
       city: data.city,
       state: data.state,
-      imageUrl: placeHolder.url,
-      imageHint: placeHolder.hint,
+      imageUrl: image.url,
+      imageHint: image.hint,
       coordinates: data.coordinates,
       landmarks: data.landmarks,
-      infrastructure: data.infrastructure
+      infrastructure: data.infrastructure,
     });
-  });
+  }
+
   return places;
 };
 
 export const getCulturalEvents = async (): Promise<CulturalEvent[]> => {
   const querySnapshot = await getDocs(collection(db, 'culturalfest'));
   const events: CulturalEvent[] = [];
-  querySnapshot.forEach((doc) => {
+
+  for (const doc of querySnapshot.docs) {
     const data = doc.data();
-    const placeHolder = getImage(data.imageHint) || { url: 'https://picsum.photos/seed/default/600/400', hint: 'placeholder' };
+    const image = await getPlaceImage(doc.id); // optional: fetch event image similarly
+
     events.push({
       id: doc.id,
       name: data.name,
       city: data.city,
       state: data.state,
-      imageUrl: placeHolder.url,
-      imageHint: placeHolder.hint,
+      imageUrl: image.url,
+      imageHint: image.hint,
       coordinates: data.coordinates,
       landmarks: data.landmarks,
-      infrastructure: data.infrastructure
+      infrastructure: data.infrastructure,
     });
-  });
+  }
+
   return events;
 };
 
